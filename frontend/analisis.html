@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgroBl3SSED: recomendaciones inteligentes para la rotación de cultivos.">
+  <title>AgroBl3SSED | Análisis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✿</span><span>AgroBl<span class="brand-three">3</span>SSED</span></a>
+  <nav class="desktop-nav" id="mainNav" aria-label="Navegación principal">
+    <a href="index.html" class="">Inicio</a>
+    <a href="registro.html" class="">Mi terreno</a>
+    <a href="analisis.html" class="active">Análisis</a>
+    <a href="mis-terrenos.html" class="">Mis terrenos</a>
+  </nav>
+  <div class="access-tools" aria-label="Herramientas de accesibilidad">
+    <span class="access-label">Texto</span>
+    <button class="tool-btn" id="decreaseText" type="button" aria-label="Disminuir tamaño del texto">A−</button>
+    <button class="tool-btn" id="increaseText" type="button" aria-label="Aumentar tamaño del texto">A+</button>
+    <button class="tool-btn contrast-btn" id="contrastToggle" type="button" aria-pressed="false">◐ <span>Contraste</span></button>
+  </div>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+</header>
+<main id="main">
+
+<section class="page-banner section-wrap">
+  <span class="eyebrow">PASO 2 DE 2</span><h1>El análisis de tu terreno</h1>
+  <p>Consulta las condiciones ambientales, explora alternativas de rotación y compara sus características.</p>
+  <div class="progress-track"><span style="width:100%"></span></div><div class="progress-label"><span>Resultados del análisis</span><span>2 / 2</span></div>
+</section>
+<section class="results-section section-wrap">
+  <div class="results-top"><div><span class="eyebrow">RESUMEN DEL TERRENO</span><h2 id="farmTitle">Tu parcela</h2><p id="resultSubtitle">Información del terreno registrado.</p></div><div class="analysis-actions"><a class="button button-outline" href="registro.html">Editar datos</a><button class="button button-primary" id="saveTerrain" type="button">Guardar terreno ✓</button></div></div>
+  <div class="notice"><strong>Estimación orientativa:</strong> los indicadores se calculan con el dataset de la zona y las alternativas con parámetros generales de cultivos. No son mediciones directas de tu terreno ni una recomendación agronómica validada.</div>
+  <div class="metric-grid">
+    <article class="metric-card"><span>Temperatura</span><strong id="metricTemp">—</strong><small id="metricTempNote">Calculando…</small></article>
+    <article class="metric-card"><span>Precipitación</span><strong id="metricRain">—</strong><small id="metricRainNote">Calculando…</small></article>
+    <article class="metric-card"><span>Humedad relativa</span><strong id="metricHumidity">—</strong><small id="metricHumidityNote">Calculando…</small></article>
+  </div>
+  <p class="zone-note" id="zoneNote" role="status" aria-live="polite"></p>
+  <div class="results-grid">
+    <article class="panel"><div class="panel-heading"><div><span class="eyebrow">01 / CULTIVOS</span><h3>Cultivos sugeridos</h3></div><span class="panel-icon">🌾</span></div><p>Cultivos que forman parte de las rotaciones mejor evaluadas para tu terreno.</p><div class="crop-chips" id="cropChips"><span>Calculando…</span></div></article>
+    <article class="panel"><div class="panel-heading"><div><span class="eyebrow">02 / AMBIENTE</span><h3>Mapas del terreno</h3></div><span class="panel-icon">🗺️</span></div><p>Al conectar las fuentes de datos se mostrarán mapas por fecha y zona.</p><div class="map-placeholders"><div>Precipitación</div><div>Humedad</div><div>Suelo</div></div></article>
+  </div>
+  <article class="panel rotation-panel"><span class="eyebrow">03 / PLANIFICACIÓN</span><h3>Tres alternativas de rotación</h3><div class="rotation-list" id="rotationList"><p class="empty-state">Calculando alternativas…</p></div></article>
+  <div class="results-grid">
+    <article class="panel"><span class="eyebrow">04 / COMPARACIÓN</span><h3>Ventajas y desventajas</h3><div id="comparisonBody"><p>Calculando…</p></div></article>
+    <article class="panel"><span class="eyebrow">05 / RECOMENDACIÓN</span><h3>La estrategia más conveniente</h3><div id="recommendationBody"><p>Calculando…</p></div></article>
+  </div>
+  <div class="final-actions"><a class="button button-primary" href="mis-terrenos.html">Ver mis terrenos →</a><a class="button button-outline" href="registro.html">Registrar otro terreno</a></div>
+</section>
+</main>
+<footer class="footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">✿</span><span>AgroBl<span class="brand-three">3</span>SSED</span></a><p>Decisiones agrícolas mejor informadas.</p><small>© 2026 AgroBl3SSED · Prototipo frontend</small></footer>
+<script src="app.js"></script><script src="api.js"></script><script src="analisis.js"></script>
+</body></html>

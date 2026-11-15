@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulta y administra tus terrenos registrados en AgroBl3SSED.">
+  <title>AgroBl3SSED | Mis terrenos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✿</span><span>AgroBl<span class="brand-three">3</span>SSED</span></a>
+  <nav class="desktop-nav" id="mainNav" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a><a href="registro.html">Mi terreno</a><a href="analisis.html">Análisis</a><a href="mis-terrenos.html" class="active">Mis terrenos</a>
+  </nav>
+  <div class="access-tools" aria-label="Herramientas de accesibilidad">
+    <span class="access-label">Texto</span><button class="tool-btn" id="decreaseText" type="button" aria-label="Disminuir tamaño del texto">A−</button>
+    <button class="tool-btn" id="increaseText" type="button" aria-label="Aumentar tamaño del texto">A+</button>
+    <button class="tool-btn contrast-btn" id="contrastToggle" type="button" aria-pressed="false">◐ <span>Contraste</span></button>
+  </div>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+</header>
+<main id="main" class="section-wrap my-farms-page">
+  <section class="page-banner">
+    <span class="eyebrow">TU ESPACIO AGRÍCOLA</span><h1>Mis terrenos</h1>
+    <p>Consulta los registros de tus parcelas y vuelve a revisar sus análisis cuando lo necesites.</p>
+  </section>
+  <section class="farmer-profile" aria-label="Perfil del agricultor">
+    <div class="profile-avatar" aria-hidden="true">🌱</div>
+    <div class="profile-copy"><span class="eyebrow">PERFIL DEL AGRICULTOR</span><h2 id="profileName">Agricultor</h2><p>Tu información y tus parcelas registradas.</p></div>
+    <div class="profile-count"><strong id="terrainCount">0</strong><span>terrenos registrados</span></div>
+  </section>
+  <section class="history-section">
+    <div class="history-heading"><div><span class="eyebrow">TU HISTORIAL</span><h2>Historial de terrenos</h2><p>Los registros se guardan en este navegador.</p></div><a class="button button-primary" href="registro.html">＋ Agregar terreno</a></div>
+    <div id="terrainList" class="terrain-list" aria-live="polite"></div>
+  </section>
+</main>
+<footer class="footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">✿</span><span>AgroBl<span class="brand-three">3</span>SSED</span></a><p>Decisiones agrícolas mejor informadas.</p><small>© 2026 AgroBl3SSED · Prototipo frontend</small></footer>
+<script src="app.js"></script><script src="api.js"></script><script src="mis-terrenos.js"></script>
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgroBl3SSED: recomendaciones inteligentes para la rotación de cultivos.">
+  <title>AgroBl3SSED | Registro del terreno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✿</span><span>AgroBl<span class="brand-three">3</span>SSED</span></a>
+  <nav class="desktop-nav" id="mainNav" aria-label="Navegación principal">
+    <a href="index.html" class="">Inicio</a>
+    <a href="registro.html" class="active">Mi terreno</a>
+    <a href="analisis.html" class="">Análisis</a>
+    <a href="mis-terrenos.html" class="">Mis terrenos</a>
+  </nav>
+  <div class="access-tools" aria-label="Herramientas de accesibilidad">
+    <span class="access-label">Texto</span>
+    <button class="tool-btn" id="decreaseText" type="button" aria-label="Disminuir tamaño del texto">A−</button>
+    <button class="tool-btn" id="increaseText" type="button" aria-label="Aumentar tamaño del texto">A+</button>
+    <button class="tool-btn contrast-btn" id="contrastToggle" type="button" aria-pressed="false">◐ <span>Contraste</span></button>
+  </div>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+</header>
+<main id="main">
+
+<section class="page-banner section-wrap">
+  <span class="eyebrow">PASO 1 DE 2</span><h1>Cuéntanos sobre tu terreno</h1>
+  <p>Con esta información podremos preparar un análisis de las condiciones de tu parcela. Si no conoces algún dato, puedes dejarlo sin responder.</p>
+  <div class="progress-track"><span style="width:50%"></span></div>
+  <div class="progress-label"><span>Registro del terreno</span><span>1 / 2</span></div>
+</section>
+<section class="form-section section-wrap">
+  <div class="section-heading"><div><span class="eyebrow">INFORMACIÓN DEL AGRICULTOR</span><h2>Datos de tu parcela</h2><p>Los campos marcados con * son necesarios.</p></div><div class="step-pill"><span>1</span> Registro</div></div>
+  <form id="farmForm" class="farm-form">
+    <div class="form-grid">
+      <label class="field"><span>Nombre del agricultor <b>*</b></span><input type="text" name="farmerName" placeholder="Ej. Juan Pérez" autocomplete="name" required></label>
+      <label class="field"><span>Nombre del terreno <b>*</b></span><input type="text" name="farmName" placeholder="Ej. Parcela El Roble" required></label>
+      <label class="field"><span>Fecha de análisis <b>*</b></span><input type="date" name="analysisDate" id="analysisDate" required></label>
+      <label class="field"><span>Tipo de suelo <small>(opcional)</small></span><select name="soilType"><option value="">No lo conozco</option><option>Arcilloso</option><option>Arenoso</option><option>Franco limoso</option><option>Franco</option><option>Franco arcilloso</option><option>Otro / No estoy seguro</option></select></label>
+      <fieldset class="field full-field">
+        <legend>Ubicación del terreno <b>*</b></legend><p class="field-help">Escribe una dirección, comunidad o localidad. También puedes buscarla en el mapa.</p>
+        <div class="location-row"><input id="locationInput" name="location" type="text" placeholder="Ej. Atlixco, Puebla, México" required><button type="button" class="button button-outline" id="searchLocation">Buscar en mapa</button></div>
+        <div class="coords-row"><label><span>Latitud <b>*</b></span><input id="latInput" name="lat" type="number" step="any" min="-90" max="90" placeholder="Ej. 18.9" required></label><label><span>Longitud <b>*</b></span><input id="lonInput" name="lon" type="number" step="any" min="-180" max="180" placeholder="Ej. -98.43" required></label></div>
+        <span class="map-hint">Las coordenadas se rellenan al pulsar «Buscar en mapa». Si no se completan, escríbelas manualmente.</span>
+        <div class="location-actions">
+    <button type="button" class="button button-outline" id="getLocation">
+        📍 Usar mi ubicacion
+    </button>
+</div>
+
+<div id="map"></div>
+
+<span class="map-hint">
+    Puedes utilizar tu ubicacion actual o seleccionar manualmente
+    un punto en el mapa.
+</span>
+        <span class="map-hint">El mapa es una ayuda para ubicar el terreno. Confirma que el lugar mostrado sea correcto.</span>
+      </fieldset>
+      <fieldset class="field"><legend>Disponibilidad de agua <b>*</b></legend><div class="radio-stack">
+        <label><input type="radio" name="water" value="Riego disponible" required> Tengo sistema de riego</label>
+        <label><input type="radio" name="water" value="Depende de la lluvia"> Dependo de la lluvia</label>
+        <label><input type="radio" name="water" value="Disponibilidad limitada"> Es limitada</label>
+        <label><input type="radio" name="water" value="Disponibilidad variable"> Varía durante el año</label>
+      </div></fieldset>
+      <label class="field"><span>Historial de cosechas <small>(opcional)</small></span><textarea name="cropHistory" rows="5" placeholder="Ej. El año pasado sembré maíz y antes frijol."></textarea><small class="helper">Escribe los cultivos anteriores y, si lo sabes, en qué temporada los sembraste.</small></label>
+    </div>
+    <div class="form-bottom"><p><span class="required">*</span> Campos obligatorios. Tus datos estarán disponibles para preparar el análisis.</p><button class="button button-primary" type="submit">Analizar mi terreno <span>→</span></button></div>
+    <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+  </form>
+</section>
+</main>
+<footer class="footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">✿</span><span>AgroBl<span class="brand-three">3</span>SSED</span></a><p>Tu información nos ayuda a entender mejor tu terreno.</p><small>© 2026 AgroBl3SSED · Prototipo frontend</small></footer>
+<script src="app.js"></script><script src="api.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="registro.js"></script>
+</body></html>

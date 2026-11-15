@@ -1,0 +1,174 @@
+[
+  {
+    "id": "actual",
+    "nombre": "Maiz - Frijol",
+    "subtitulo": "Rotacion actual de la mayoria de productores de temporal",
+    "actual": 1,
+    "notas": "Linea base por defecto.",
+    "secuencia": [
+      "maiz_grano",
+      "frijol"
+    ]
+  },
+  {
+    "id": "maiz_haba",
+    "nombre": "Maiz - Haba seca",
+    "subtitulo": "Cereal de temporal alternado con leguminosa de invierno",
+    "actual": 0,
+    "notas": "La haba seca aporta fijacion de nitrogeno (100 en la dimension nitrogeno) y tolera heladas. Su siembra (oct) puede traslaparse con la cosecha del maiz (nov); ajustar fechas.",
+    "secuencia": [
+      "maiz_grano",
+      "haba_seca"
+    ]
+  },
+  {
+    "id": "maiz_garbanzo",
+    "nombre": "Maiz - Garbanzo",
+    "subtitulo": "Leguminosa de invierno de bajo consumo de agua tras el maiz",
+    "actual": 0,
+    "notas": "El garbanzo se siembra en noviembre, justo tras la cosecha del maiz. Demanda de agua baja (0.3), pero sensibilidad a helada media (0.45).",
+    "secuencia": [
+      "maiz_grano",
+      "garbanzo"
+    ]
+  },
+  {
+    "id": "maiz_frijol_avena",
+    "nombre": "Maiz - Frijol - Avena forrajera",
+    "subtitulo": "Alterna cereal, leguminosa y cobertura de invierno",
+    "actual": 0,
+    "notas": "La avena forrajera (es_cobertura) protege el suelo en el ciclo de invierno y mejora suelo y erosion.",
+    "secuencia": [
+      "maiz_grano",
+      "frijol",
+      "avena_forrajera"
+    ]
+  },
+  {
+    "id": "maiz_ebo",
+    "nombre": "Maiz - Ebo (veza)",
+    "subtitulo": "Cobertura leguminosa de invierno entre ciclos de maiz",
+    "actual": 0,
+    "notas": "El ebo es leguminosa forrajera y de cobertura, util para erosion y suelo.",
+    "secuencia": [
+      "maiz_grano",
+      "ebo"
+    ]
+  },
+  {
+    "id": "maiz_trigo_frijol",
+    "nombre": "Maiz - Trigo - Frijol",
+    "subtitulo": "Tres ciclos con dos familias de cereal separadas por una leguminosa",
+    "actual": 0,
+    "notas": "El trigo ocupa el ciclo de invierno (nov-may) y el frijol el de verano (jun-oct).",
+    "secuencia": [
+      "maiz_grano",
+      "trigo_grano",
+      "frijol"
+    ]
+  },
+  {
+    "id": "milpa_calabacita",
+    "nombre": "Maiz - Frijol - Calabacita",
+    "subtitulo": "Milpa ampliada con cucurbitacea de ciclo corto",
+    "actual": 0,
+    "notas": "Tres familias distintas (Poaceae, Fabaceae, Cucurbitaceae). La calabacita tiene ciclo de 60 dias y demanda de agua media-alta.",
+    "secuencia": [
+      "maiz_grano",
+      "frijol",
+      "calabacita"
+    ]
+  },
+  {
+    "id": "sorgo_garbanzo",
+    "nombre": "Sorgo - Garbanzo",
+    "subtitulo": "Opcion de bajo consumo de agua para zonas secas",
+    "actual": 0,
+    "notas": "Combina dos cultivos de baja demanda hidrica (0.35 y 0.3). El garbanzo se siembra en noviembre, tras la cosecha del sorgo.",
+    "secuencia": [
+      "sorgo_grano",
+      "garbanzo"
+    ]
+  },
+  {
+    "id": "trigo_arvejon",
+    "nombre": "Trigo - Arvejon",
+    "subtitulo": "Cereal de invierno alternado con leguminosa",
+    "actual": 0,
+    "notas": "El arvejon fija nitrogeno (100) y tolera heladas (0.25); ambos son de ciclo invernal.",
+    "secuencia": [
+      "trigo_grano",
+      "arvejon"
+    ]
+  },
+  {
+    "id": "cebada_haba",
+    "nombre": "Cebada - Haba seca",
+    "subtitulo": "Sistema de invierno con aporte de nitrogeno",
+    "actual": 0,
+    "notas": "Sistema de cultivos tolerantes al frio; la haba seca restituye nitrogeno tras la cebada.",
+    "secuencia": [
+      "cebada_grano",
+      "haba_seca"
+    ]
+  },
+  {
+    "id": "amaranto_frijol_maiz",
+    "nombre": "Amaranto - Frijol - Maiz",
+    "subtitulo": "Diversificacion con pseudocereal de baja demanda de agua",
+    "actual": 0,
+    "notas": "El amaranto tiene demanda de agua baja (0.35) y diversifica familias (Amaranthaceae, Fabaceae, Poaceae).",
+    "secuencia": [
+      "amaranto",
+      "frijol",
+      "maiz_grano"
+    ]
+  },
+  {
+    "id": "papa_cebada_haba",
+    "nombre": "Papa - Cebada - Haba seca",
+    "subtitulo": "Tuberculo seguido de cereal y leguminosa",
+    "actual": 0,
+    "notas": "Rompe el ciclo de plagas y enfermedades de la papa (Solanaceae) con cereal y leguminosa.",
+    "secuencia": [
+      "papa",
+      "cebada_grano",
+      "haba_seca"
+    ]
+  },
+  {
+    "id": "jitomate_maiz_haba",
+    "nombre": "Jitomate - Maiz - Haba seca",
+    "subtitulo": "Hortaliza solanacea alternada con cereal y leguminosa",
+    "actual": 0,
+    "notas": "Evita repetir solanaceas en el mismo lote. El jitomate tiene alta demanda de agua (0.75) y alta sensibilidad a helada (0.85).",
+    "secuencia": [
+      "jitomate",
+      "maiz_grano",
+      "haba_seca"
+    ]
+  },
+  {
+    "id": "brocoli_frijol_zanahoria",
+    "nombre": "Brocoli - Frijol - Zanahoria",
+    "subtitulo": "Hortalizas de tres familias distintas",
+    "actual": 0,
+    "notas": "Familias distintas (Brassicaceae, Fabaceae, Apiaceae) para reducir presion de plagas. Verificar el traslape de fechas entre ciclos.",
+    "secuencia": [
+      "brocoli",
+      "frijol",
+      "zanahoria"
+    ]
+  },
+  {
+    "id": "forrajero_maiz_ebo",
+    "nombre": "Maiz forrajero - Ebo",
+    "subtitulo": "Sistema forrajero con leguminosa de cobertura",
+    "actual": 0,
+    "notas": "Orientado a produccion de forraje; el ebo cubre el suelo y aporta nitrogeno en invierno.",
+    "secuencia": [
+      "maiz_forrajero",
+      "ebo"
+    ]
+  }
+]
